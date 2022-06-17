@@ -74,7 +74,8 @@ namespace ExerciseCrud
             con.Open();
             SqlCommand dlt = new SqlCommand("exec DeletePABD '" + nim + "'",con);
             dlt.ExecuteNonQuery();
-            MessageBox.Show("Berhasil Di Edit....");
+            MessageBox.Show("Berhasil Di Dihapus....");
+            con.Close();
             GetListPABD();
         }
     }
