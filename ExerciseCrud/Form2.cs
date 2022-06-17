@@ -58,7 +58,6 @@ namespace ExerciseCrud
             string nim = textBox1.Text, nama = textBox2.Text, kelas = comboBox2.Text, nilai = comboBox1.Text;
             con.Open();
             SqlCommand c = new SqlCommand("exec UpdatePABD '" + nim + "','" + nama + "','" + kelas + "','" + nilai + "'");
-            c.ExecuteNonQuery();
             MessageBox.Show("Berhasil Di Edit....");
             GetListPABD();
         }
