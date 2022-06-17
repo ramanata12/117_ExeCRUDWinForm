@@ -36,10 +36,12 @@ namespace ExerciseCrud
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //insert
             string nim = textBox1.Text, nama=textBox2.Text, kelas = comboBox2.Text, nilai = comboBox1.Text;
             con.Open();
-            SqlCommand c = new SqlCommand("exec InsertPABD '" + nim + "','" + nama + "','" + kelas + "','" + nilai + "'");
-            c.ExecuteNonQuery();
+            SqlCommand insert = new SqlCommand("exec InsertPABD '" + nim + "','" + nama + "','" + kelas + "','" + nilai + "'",con);
+            insert.ExecuteNonQuery();
+            con.Close();
             MessageBox.Show("Berhasil Ditambahkan....");
             GetListPABD();
         }
@@ -55,9 +57,23 @@ namespace ExerciseCrud
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //Update
             string nim = textBox1.Text, nama = textBox2.Text, kelas = comboBox2.Text, nilai = comboBox1.Text;
             con.Open();
-            SqlCommand c = new SqlCommand("exec UpdatePABD '" + nim + "','" + nama + "','" + kelas + "','" + nilai + "'");
+            SqlCommand upt = new SqlCommand("exec UpdatePABD '" + nim + "','" + nama + "','" + kelas + "','" + nilai + "'",con);
+            upt.ExecuteNonQuery();
+            MessageBox.Show("Berhasil Di Edit....");
+            con.Close();
+            GetListPABD();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //Delete
+            string nim = textBox1.Text;
+            con.Open();
+            SqlCommand dlt = new SqlCommand("exec DeletePABD '" + nim + "'",con);
+            dlt.ExecuteNonQuery();
             MessageBox.Show("Berhasil Di Edit....");
             GetListPABD();
         }

@@ -19,7 +19,9 @@ namespace ExerciseCrud
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+           Form2 pabd = new Form2();
+            pabd.Show();
+            this.Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -35,6 +37,20 @@ namespace ExerciseCrud
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form3 PKW = new Form3();
+            PKW.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form4 hci = new Form4();
+            hci.Show();
+            this.Hide();
         }
     }
 }
